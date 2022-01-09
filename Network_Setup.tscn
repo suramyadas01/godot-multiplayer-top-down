@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Network_Setup.gd" type="Script" id=1]
+
+[node name="Network_Setup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Multiplayer_Configure" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.68176
+margin_right = -1.68176
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Multiplayer_Configure"]
+margin_left = 1.68176
+margin_right = 724.682
+margin_bottom = 361.0
+color = Color( 0, 0, 0, 0.658824 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Create_Server" type="Button" parent="Multiplayer_Configure"]
+margin_left = 299.642
+margin_top = 145.02
+margin_right = 396.642
+margin_bottom = 165.02
+text = "Create Server"
+
+[node name="Join_Server" type="Button" parent="Multiplayer_Configure"]
+margin_left = 298.864
+margin_top = 204.836
+margin_right = 395.864
+margin_bottom = 224.836
+text = "Join Server"
+
+[node name="LineEdit" type="LineEdit" parent="Multiplayer_Configure"]
+margin_left = 240.881
+margin_top = 81.2995
+margin_right = 463.881
+margin_bottom = 105.299
+text = "Enter IP here"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ip_address" type="Label" parent="CanvasLayer"]
+margin_left = 401.948
+margin_top = 344.768
+margin_right = 596.948
+margin_bottom = 358.768
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Multiplayer_Configure/Create_Server" to="." method="_on_Create_Server_pressed"]
+[connection signal="pressed" from="Multiplayer_Configure/Join_Server" to="." method="_on_Join_Server_pressed"]
